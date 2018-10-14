@@ -1,0 +1,42 @@
+<app-user-navbar></app-user-navbar>
+
+<h3 *ngIf="(listCart$ | async)?.length == 0">
+    404 Not Found Item In List Cart
+</h3>
+
+
+<div class="panel panel-success" *ngIf="(listCart$ | async)?.length > 0">
+      <div class="panel-heading">
+            <h3 class="panel-title">List Cart</h3>
+      </div>
+      <div class="panel-body">
+            
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total Money</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listCart$ | async; let i = index">
+                        <td>{{ item?.Name }}</td>
+                        <td>{{ item?.Price }}</td>
+                        <td>{{ item?.quantity }}</td>
+                        <td>{{ item?.totalMoney | currency }}</td>
+                        <td> <img src=" {{ item?.Image }} " alt="" width="250px" height="250px"> </td>
+                        <td> <button (click)="removeItem(i)" >Remove Item</button> </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <button type="button" > GO TO PAY </button>
+      </div>
+</div>
+
+
+<app-user-footer></app-user-footer>

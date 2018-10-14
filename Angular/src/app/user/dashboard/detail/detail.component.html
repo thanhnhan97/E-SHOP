@@ -1,0 +1,35 @@
+<app-user-navbar></app-user-navbar>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Detail Item</h3>
+  </div>
+  <div class="panel-body">
+    <div class="card" style="width: 18rem;" *ngIf="product$ | async; let product">
+      <a>
+        <img src="{{ product?.Image }}" class="card-img-top">
+      </a>
+      <div class="card-body">
+        <p>
+          <span>Price: </span> {{ product?.Price | currency }}
+        </p>
+        <p>
+          <span>Quantity: </span>
+          <input #quantity type="number">
+        </p>
+        <h5 class="card-title"> {{ product?.Name }} </h5>
+        <p class="card-text">
+          {{ product?.Description }}
+        </p>
+        <div class="form-inline">
+          <button type="button" class="btn btn-primary" (click)="addCart(product,quantity.value)">Buy</button>
+          <button type="button" class="btn btn-info" (click)="goBack()"> Go Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-user-footer></app-user-footer>

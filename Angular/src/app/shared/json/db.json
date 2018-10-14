@@ -1,0 +1,32 @@
+[
+    {
+        "Products": [
+            {
+                "Carts": [],
+                "ProductID": 1,
+                "Name": "Adidas 1",
+                "Price": 20,
+                "Description": "không có ",
+                "Image": null,
+                "ProductTypeID": 1
+            }
+        ],
+        "ProductTypeID": 1,
+        "Name": "Adidas"
+    },
+    {
+        "Products": [
+            {
+                "Carts": [],
+                "ProductID": 2,
+                "Name": "Nike 1",
+                "Price": 30,
+                "Description": "không có ",
+                "Image": null,
+                "ProductTypeID": 2
+            }
+        ],
+        "ProductTypeID": 2,
+        "Name": "Nike"
+    }
+]
